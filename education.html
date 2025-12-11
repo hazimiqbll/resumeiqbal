@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education | My Personal Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
+            color: #ecf0f1;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        nav {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 15px;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            background: rgba(214, 52, 71, 0.2);
+            color: #ff6b81;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 900px;
+            background: linear-gradient(135deg, #454545 0%, #3a3a3a 100%);
+            margin: 40px auto;
+            padding: 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            overflow: hidden;
+        }
+        
+        header {
+            text-align: center;
+            background: linear-gradient(135deg, #d63447 0%, #c62d3f 100%);
+            color: white;
+            padding: 50px 20px;
+            position: relative;
+        }
+        
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: linear-gradient(135deg, #d63447 0%, #c62d3f 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 100%);
+        }
+        
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        header p {
+            font-size: 17px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .content-wrapper {
+            padding: 50px 40px;
+        }
+        
+        h2 {
+            color: #ff6b81;
+            border-left: 4px solid #d63447;
+            padding-left: 15px;
+            margin-top: 40px;
+            margin-bottom: 25px;
+            font-size: 26px;
+            font-weight: 600;
+        }
+        
+        h3 {
+            color: #ff8fa3;
+            margin-top: 20px;
+            margin-bottom: 12px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+        
+        th {
+            background: rgba(214, 52, 71, 0.8);
+            color: white;
+            font-weight: 600;
+            font-size: 15px;
+        }
+        
+        td {
+            color: #ecf0f1;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        
+        .edu-box {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 25px;
+            border-left: 3px solid #d63447;
+            margin-top: 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .edu-box:hover {
+            background: rgba(0, 0, 0, 0.3);
+            border-left-width: 5px;
+            transform: translateX(5px);
+        }
+        
+        .edu-box p {
+            margin: 10px 0;
+            color: #ecf0f1;
+        }
+        
+        .edu-box strong {
+            color: #ff8fa3;
+        }
+        
+        .edu-logo {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+        
+        .edu-logo img {
+            max-width: 150px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        
+        .edu-logo p {
+            margin-top: 10px;
+            color: #95a5a6;
+            font-size: 14px;
+        }
+        
+        ul, ol {
+            margin: 20px 0;
+            padding-left: 40px;
+            color: #ecf0f1;
+        }
+        
+        ul li, ol li {
+            margin: 12px 0;
+            line-height: 1.8;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+            color: #bdc3c7;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        #clock {
+            text-align: center;
+            background: rgba(214, 52, 71, 0.15);
+            padding: 18px;
+            margin: 0 0 30px 0;
+            font-weight: 500;
+            color: #ff8fa3;
+            border-radius: 10px;
+            font-size: 18px;
+            border: 1px solid rgba(214, 52, 71, 0.2);
+            letter-spacing: 1px;
+        }
+        
+        small {
+            color: #95a5a6;
+        }
+        
+        p {
+            color: #ecf0f1;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="biodata.html">Biodata</a>
+        <a href="education.html">Education</a>
+        <a href="experience.html">Experience</a>
+        <a href="family.html">Family</a>
+        <a href="gallery.html">Gallery</a>
+    </nav>
+    
+    <div class="container">
+        <header>
+            <h1>My Education</h1>
+            <p>Academic Background & Achievements</p>
+        </header>
+        
+        <div class="content-wrapper">
+            <div id="clock"></div>
+            
+            <h2>Current Education</h2>
+            <div class="edu-box">
+                <h3>Diploma in Information Management</h3>
+                <p>📅 2023 - present (Expected: 2026)</p>
+                <p><strong>Institution:</strong> Universiti Teknologi MARA (UiTM)</p>
+                <p><strong>Campus:</strong> UiTM Segamat, Johor</p>
+                <p><strong>Faculty:</strong> Faculty of Information Science</p>
+                <p><strong>Status:</strong> last Year Student</p>
+                
+                <div class="edu-logo">
+                    <img src="uitmlogo.jpg" alt="UiTM Logo">
+                    
+                </div>
+            </div>
+
+            <div class="edu-box">
+                <h3>School</h3>
+                <p>📅 2012 - 2017</p>
+                <p><strong>Institution:</strong> Sekolah Kebangsaan Air Putih</p>
+                
+                <div class="edu-logo">
+                    <img src="skap.jpg" alt="SK Air Putih Logo">
+                    
+                </div>
+                
+                <p>📅 2017 - 2022</p>
+                <p><strong>Institution:</strong> Sekolah Menengah Kebangsaan Dato'Sulaiman</p>
+                
+                <div class="edu-logo">
+                    <img src="smkds.jpg" alt="smkds.jpg">
+                  
+                </div>
+            </div>
+            
+            <h2>Previous Education</h2>
+            <div class="edu-box">
+                <h3>Sijil Pelajaran Malaysia (SPM)</h3>
+                <p>📅 2022</p>
+                <p><strong>School:</strong> SMK Dato'Sulaiman, Batu Pahat, Johor</p>
+                <p><strong>Results:</strong> 5A 1B 2C 1D 1E</p>
+                
+               
+            </div>
+            
+           
+            
+            <h2>Co-Curricular Activities</h2>
+            <h3>University Level (UiTM):</h3>
+            <table>
+                <tr>
+                    <th>Activity/Club</th>
+                    <th>Position</th>
+                    <th>Year</th>
+                </tr>
+                <tr>
+                    <td>Information Management Club (IMS)</td>
+                    <td>Publicity and Multimedia</td>
+                    <td>2023 - 2025</td>
+                </tr>
+                <tr>
+                    <td>Chess Club</td>
+                    <td>Treasurer</td>
+                    <td>2023 - 2025</td>
+                </tr>
+            </table>
+            
+            <h3>School Level (Secondary):</h3>
+            <ol>
+                <li>Pantun Club - Member (2020-2022)</li>
+                <li>Badminton Team - Player (2018-2020)</li>
+                <li>(PBSM) Malaysian Red Crescent - Active Participant (2018-2020)</li>
+                <li>Fireman Club - Member (2020-2022)</li>
+            </ol>
+            
+            <h2>Certifications & Courses</h2>
+            <ol>
+                <li><b>Introduction to HTML & CSS</b> - Online Course (2024)</li>
+                <li><b>JavaScript Basics</b> - Codecademy (2024)</li>
+                <li><b>Microsoft Office Specialist</b> - Microsoft (2023)</li>
+                <li><b>Database Fundamentals</b> - Online Learning Platform (2024)</li>
+            </ol>
+            
+            <h2>Skills Developed Through Education</h2>
+            <div class="edu-box">
+                <h3>Technical Skills:</h3>
+                <ul>
+                    <li>Web Development - HTML, CSS, JavaScript (Basic)</li>
+                    <li>Programming - C++, PHP (Basic)</li>
+                    <li>MS Office - Word, Excel, PowerPoint (Advanced)</li>
+                </ul>
+                <h3>Soft Skills:</h3>
+                <ul>
+                    <li>Critical thinking</li>
+                    <li>Communication and presentation skills</li>
+                    <li>Teamwork and collaboration</li>
+                    <li>Research and analytical skills</li>
+                </ul>
+            </div>
+            
+            <h2>Future Education Plans</h2>
+            <div class="edu-box">
+                <p><b>Short-term Goal:</b></p>
+                <ul>
+                    <li>Complete Diploma with great of CGPA 3.5 and above</li>
+                    <li>Join agent of insurance</li>
+                    <li>Obtain more IT skills</li>
+                </ul>
+                <p><b>Long-term Goal:</b></p>
+                <ul>
+                    <li>Pursue Bachelor's Degree in Political science or IT</li>
+                    <li>Improving self in learning programming languages</li>
+                </ul>
+            </div>
+            
+            <p style="margin-top: 40px; font-style: italic; text-align: center;">
+                <small>* All education records are accurate and verified as of December 2025</small>
+            </p>
+        </div>
+        
+        <footer>
+            © 2025 Mohamad Hazim Iqbal • UiTM • IMD318 Project
+        </footer>
+    </div>
+    
+    <script>
+        function updateClock() {
+            var now = new Date();
+            var day = now.getDate();
+            var month = now.getMonth() + 1;
+            var year = now.getFullYear();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            
+            if (day < 10) day = "0" + day;
+            if (month < 10) month = "0" + month;
+            if (hours < 10) hours = "0" + hours;
+            if (minutes < 10) minutes = "0" + minutes;
+            if (seconds < 10) seconds = "0" + seconds;
+            
+            var currentTime = "📅 " + day + "/" + month + "/" + year + " | ⏰ " + hours + ":" + minutes + ":" + seconds;
+            document.getElementById("clock").innerHTML = currentTime;
+        }
+        
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>
