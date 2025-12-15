@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata | My Personal Website</title>
+
+    <!-- use shared stylesheet (removed inline red theme) -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- added lightweight page-specific styles for cards and hovers -->
+    <style>
+        /* filepath: c:\Users\USER\OneDrive\Desktop\coding file\biodata.html (local additions) */
+
+        /* base card */
+        .card {
+            background: rgba(255,255,255,0.03);
+            padding: 20px;               /* increased for breathing room */
+            border-radius: 12px;
+            margin-bottom: 22px;        /* slightly larger gap between cards */
+            box-shadow: 0 8px 22px rgba(0,0,0,0.28);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0,0,0,0.35); }
+
+        .table-card table { background: transparent; border-radius: 8px; overflow: hidden; width:100%; }
+        .table-card th { background: rgba(255,255,255,0.06); color: inherit; padding: 14px 16px; text-align:left; }
+        .table-card td { background: transparent; padding: 12px 16px; vertical-align: middle; }
+
+        /* profile circle */
+        .profile-placeholder {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: #ff8fa3;
+            border: 4px solid rgba(255,255,255,0.04);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            transition: transform 0.25s ease;
+            margin: 0 auto 18px; /* added bottom margin */
+            overflow: hidden;
+        }
+        .profile-placeholder:hover { transform: scale(1.04); }
+        .profile-placeholder img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 50%; }
+
+        .info-box.card { border-left: none; }
+
+        /* list spacing improvements */
+        .card ul {
+            margin: 0;
+            padding-left: 24px;    /* consistent left padding inside cards */
+            color: inherit;
+        }
+        .card ul li {
+            margin: 10px 0;        /* vertical space between items */
+            line-height: 1.8;      /* improved readability */
+            padding: 4px 0;        /* small internal padding for balance */
+            list-style: disc;
+        }
+        .card ul li:last-child { margin-bottom: 0; }
+
+        /* headings spacing */
+        h2 {
+            margin-top: 26px;      /* consistent spacing above sections */
+            margin-bottom: 12px;
+        }
+        h3 { margin-bottom: 10px; }
+
+        /* social icons spacing */
+        .social-media { margin-top: 12px; }
+        .social-media a { display:inline-block; margin:0 10px; }
+
+        /* restored image-based social thumbnails */
+        .soc-thumb {
+            width:50px;
+            height:50px;
+            border-radius:10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            background: rgba(255,255,255,0.03);
+            padding: 6px;
+            object-fit: cover;
+            display: inline-block;
+            transition: transform 0.25s ease, opacity 0.25s ease;
+        }
+        .social-media a:hover .soc-thumb { transform: translateY(-6px); opacity:0.92; }
+
+        /* minor layout spacing */
+        .content-wrapper { padding-top: 18px; padding-bottom: 8px; }
+        .profile-section { margin-bottom: 6px; }
+
+        /* responsive tweak */
+        @media (max-width: 600px) {
+            .profile-placeholder { width: 130px; height:130px; }
+            .card { padding: 16px; }
+            .table-card th, .table-card td { padding: 10px 12px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- replace nav to match index.html structure -->
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="biodata.html">BIODATA</a></li>
+            <li><a href="education.html">EDUCATION</a></li>
+            <li><a href="experience.html">EXPERIENCE</a></li>
+            <li><a href="family.html">FAMILY</a></li>
+            <li><a href="gallery.html">GALLERY</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>My Biodata</h1>
+            <p>My Personal Information</p>
+        </header>
+        
+        <div class="content-wrapper">
+            <div id="clock"></div>
+            <div class="profile-section">
+                <!-- load actual profile image inside the circular placeholder -->
+                <img src="myself.jpg" alt="My Profile Picture" class="profile-img">
+             </div>
+
+            <h2>Personal Details</h2>
+            <div class="card table-card">
+                <table>
+                    <tr><th>Field</th><th>Information</th></tr>
+                    <tr><td>Full name</td><td>Mohamad Hazim Iqbal Bin Mohd Khirol</td></tr>
+                    <tr><td>Student ID</td><td>2023611544</td></tr>
+                    <tr><td>Date of Birth</td><td>28/08/2005</td></tr>
+                    <tr><td>Age</td><td>20</td></tr>
+                    <tr><td>Gender</td><td>Male</td></tr>
+                    <tr><td>Nationality</td><td>Malaysian/Pakistani</td></tr>
+                </table>
+            </div>
+
+            <h2>Contact Information</h2>
+            <div class="card table-card">
+                <table>
+                    <tr><th>Field</th><th>Information</th></tr>
+                    <tr><td>Address</td><td>No 75, Parit Sulong, 83500, Batu Pahat, Johor</td></tr>
+                    <tr><td>City</td><td>Batu Pahat</td></tr>
+                    <tr><td>State</td><td>Johore</td></tr>
+                    <tr><td>Phone</td><td>+60 18-783 0728</td></tr>
+                    <tr><td>Email</td><td>2023611544@student.uitm.edu.my</td></tr>
+                </table>
+            </div>
+
+            <h2>About Me</h2>
+            <div class="info-box card">
+                <p>Hello! My name is <b>Mohamad Hazim Iqbal</b> and I am studying <b>information science</b> at UiTM branch Segamat Johor.</p>
+                <p>I keen learning web development and technology. One of my primary goals include improving my IT skills and building creative projects in this course field.</p>
+            </div>
+
+            <h2>Hobbies</h2>
+            <div class="card">
+                <ul>
+                    <li>Playing Chess</li>
+                    <li>Gaming</li>
+                    <li>Watch movies</li>
+                    <li>Sports</li>
+                </ul>
+            </div>
+
+            <h2>Technical Skills</h2>
+            <div class="card">
+                <ul>
+                    <li>HTML & CSS</li>
+                    <li>Basic data entry</li>
+                    <li>Account calculate</li>
+                </ul>
+            </div>
+
+            <h2>📍 My Location</h2>
+            <div class="card location-map">
+                <h3>Parit Sulong, Batu Pahat, Johor</h3>
+                <p style="margin: 15px 0;">please click on the map to view in Google Maps</p>
+                <div class="map-container">
+                    <a href="https://www.google.com/maps/place/Parit+Sulong,+Johor/@1.7891,102.9891,13z" target="_blank">
+                        <img src="ptsulong.jpg" alt="Location Map" usemap="#locationmap">
+                    </a>
+                </div>
+                <map name="locationmap">
+                    <area shape="rect" coords="0,0,800,600" href="https://www.google.com/maps/place/Parit+Sulong,+Johor/@1.7891,102.9891,13z" target="_blank" alt="Parit Sulong">
+                </map>
+            </div>
+
+            <h2>Social Media</h2>
+            <div class="social-media">
+                <a href="https://instagram.com/iqblryn" target="_blank" aria-label="Instagram">
+                    <img src="instagram-thumb.png" alt="Instagram" class="soc-thumb">
+                </a>
+                <a href="https://x.com/iqblkhir" target="_blank" aria-label="X">
+                    <img src="x-thumb.png" alt="X (Twitter)" class="soc-thumb">
+                </a>
+                <a href="https://threads.net/iqblkrl" target="_blank" aria-label="Threads">
+                    <img src="threads-thumb.png" alt="Threads" class="soc-thumb">
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <!-- kept content but structure matches index.css expectations -->
+            © 2025 Mohamad Hazim Iqbal • UiTM • IMD318 Project
+        </footer>
+    </div>
+
+    <!-- include shared JS like index -->
+    <script src="js/script.js"></script>
+    <script>
+        if (typeof updateClock !== 'function') {
+            function updateClock(){ const n=new Date(); const p=s=>String(s).padStart(2,'0'); document.getElementById('clock').textContent = '📅 '+p(n.getDate())+'/'+p(n.getMonth()+1)+'/'+n.getFullYear()+' | ⏰ '+p(n.getHours())+':'+p(n.getMinutes())+':'+p(n.getSeconds()); }
+            updateClock(); setInterval(updateClock,1000);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Mohamad Hazim Iqbal - 2023611544">
+    <meta name="description" content="Personal Website for IMD318 Project">
+    <title>Home | My Personal Website</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="biodata.html">BIODATA</a></li>
+            <li><a href="education.html">EDUCATION</a></li>
+            <li><a href="experience.html">EXPERIENCE</a></li>
+            <li><a href="family.html">FAMILY</a></li>
+            <li><a href="gallery.html">GALLERY</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <header>
+            <div class="marquee-container">
+                <marquee behavior="scroll" direction="left" scrollamount="5">
+                    <h1> Welcome to My Personal Website </h1>
+                </marquee>
+            </div>
+
+            <h2>IMD318 Individual Project</h2>
+        </header>
+
+        <div class="content-wrapper">
+
+            <div id="clock"></div>
+
+            <div class="profile-section">
+                <img src="iqbal.jpg" alt="My Profile Picture" class="profile-img">
+            </div>
+
+            <h2>About This Website</h2>
+            <p>
+                Hello! My name is <b>Mohamad Hazim Iqbal bin Mohd Khirol</b> and I am a <strong>diploma student</strong> at 
+                <em>Universiti Teknologi MARA (UiTM)</em>. This website is created as part of my IMD 318 personal project purpose. 
+                If you want to know further about me, you may explore this website!
+            </p>
+
+            <hr>
+
+            <p><b>This website contains information about my:</b></p>
+
+            <p><span class="highlight">Personal background, Academic background, Work and skills, Family members, Photo and memories</span></p>
+
+            <p>I hope you enjoy exploring my website!</p>
+
+            <h2>Quick Navigation</h2>
+
+            <p>Click on the sections below to learn more about me:</p>
+
+            <div class="link-boxes">
+
+                <a href="biodata.html" class="link-box">
+                    <h3>Biodata</h3>
+                    <p>Personal Info</p>
+                </a>
+
+                <a href="education.html" class="link-box">
+                    <h3>Education</h3>
+                    <p>Academic Background</p>
+                </a>
+
+                <a href="experience.html" class="link-box">
+                    <h3>Experience</h3>
+                    <p>Work & Skills</p>
+                </a>
+
+                <a href="family.html" class="link-box">
+                    <h3>Family</h3>
+                    <p>My Family Members</p>
+                </a>
+
+                <a href="gallery.html" class="link-box">
+                    <h3>Gallery</h3>
+                    <p>Photos & Memories</p>
+                </a>
+
+            </div>
+
+            <h2>Website Information</h2>
+            <p><i>This website demonstrates the use of HTML, CSS, and JavaScript.</i></p>
+
+            <p><small>Last Updated: December 2025</small></p>
+
+            <p><sup>*</sup> This website is created for educational purposes.</p>
+        </div>
+
+        <footer>
+            <p><strong>&copy; 2025 Mohamad Hazim Iqbal. All Rights Reserved.</strong></p>
+            <p>Student ID: 2023611544 | Class: JSI1105B</p>
+            <p><mark>Created by: Mohamad Hazim Iqbal</mark></p>
+            <p>UiTM | IMD318 Individual Project</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        if (typeof updateClock !== 'function') {
+            function updateClock(){ const n=new Date(); const p=s=>String(s).padStart(2,'0'); document.getElementById('clock').textContent = '📅 '+p(n.getDate())+'/'+p(n.getMonth()+1)+'/'+n.getFullYear()+' | ⏰ '+p(n.getHours())+':'+p(n.getMinutes())+':'+p(n.getSeconds()); }
+            updateClock(); setInterval(updateClock,1000);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience | My Personal Website</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- local page tweaks: cards, profile circle, tables/lists spacing -->
+    <style>
+        .card {
+            background: rgba(255,255,255,0.03);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 22px rgba(0,0,0,0.28);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0,0,0,0.35); }
+
+        .table-card table { width:100%; background:transparent; border-radius:8px; overflow:hidden; }
+        .table-card th, .table-card td { padding:12px 16px; text-align:left; vertical-align:middle; }
+
+        .profile-section { text-align:center; margin-bottom:18px; }
+        .profile-placeholder {
+            width:160px; height:160px; border-radius:50%; overflow:hidden;
+            display:inline-block; border:4px solid rgba(255,255,255,0.04);
+            box-shadow:0 8px 20px rgba(0,0,0,0.3);
+        }
+        .profile-placeholder img { width:100%; height:100%; object-fit:cover; display:block; }
+
+        .card ul, .card ol { margin:10px 0 0 24px; }
+        @media (max-width:600px){ .profile-placeholder{width:130px;height:130px;} .card{padding:16px;} }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="biodata.html">BIODATA</a></li>
+            <li><a href="education.html">EDUCATION</a></li>
+            <li><a href="experience.html">EXPERIENCE</a></li>
+            <li><a href="family.html">FAMILY</a></li>
+            <li><a href="gallery.html">GALLERY</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>My Experience</h1>
+            <p>Work & Project Experience</p>
+        </header>
+
+        <div class="content-wrapper">
+            <div id="clock"></div>
+
+            <!-- profile -->
+            <div class="profile-section">
+                <img src="myself.jpg" alt="My Profile Picture" class="profile-img">
+            </div>
+
+            <h2>Work Experience</h2>
+            <div class="card">
+                <div class="exp-box">
+                 <h3>💼 Part-Time Cashier</h3>
+                 <p class="duration">📅 June 2022 - September 2023</p>
+                 <p><strong>Company:</strong> OOpik Asam Pedas Restaurant, Batu Pahat</p>
+                 <p><strong>Responsibilities:</strong></p>
+                 <ul>
+                     <li>Managed sales records</li>
+                     <li>Account checking</li>
+                     <li>Provided excellent customer service</li>
+                 </ul>
+                 <p><strong>Skills Gained:</strong> Communication, Customer service, Time management, Calculate skills</p>
+                </div>
+            </div>
+
+            <h2>Internship / Industrial Training</h2>
+            <div class="card">
+                <div class="exp-box">
+                 <h3>🖥️ IT Support Intern</h3>
+                 <p class="duration">📅 August 2025 - September 2025</p>
+                 <p><strong>Company:</strong> EB Packaging Sdn Bhd</p>
+                 
+                    <div class="company-logo">
+                        <img src="ebpackaging.jpg" alt="EB Packaging Company Logo">
+                    </div>
+                    
+                    <p><strong>Duties:</strong></p>
+                    <ul>
+                        <li>Account entry and checking</li>
+                        <li>Managing Records</li>
+                        <li>Work with experienced professionals</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Technical Skills</h2>
+            <div class="card">
+                <div class="exp-box">
+                 <h3>Programming & Web Development</h3>
+                 <ul>
+                     <li><b>HTML & CSS</b> - Intermediate level</li>
+                     <li><b>JavaScript</b> - Basic level</li>
+                     <li><b>PHP</b> - Basic level</li>
+                     <li><b>C++</b> - Basic to intermediate</li>
+                     <li><b>MySQL</b> - Database queries and management</li>
+                 </ul>
+ 
+                 <h3>Software & Tools</h3>
+                 <ul>
+                     <li>Microsoft Office (Word, Excel, PowerPoint) - Advanced</li>
+                     <li>Adobe Photoshop - Basic editing</li>
+                     <li>Visual Studio Code - Code editor</li>
+                     <li>XAMPP - Local server setup</li>
+                 </ul>
+                </div>
+            </div>
+ 
+            <h2>Soft Skills Developed</h2>
+            <div class="card">
+                <ol type="A">
+                    <li>Communication Skills - Good verbal and written communication</li>
+                    <li>Teamwork - Experience working in group projects</li>
+                    <li>Problem Solving - Ability to troubleshoot technical issues</li>
+                    <li>Time Management - Managing multiple tasks and deadlines</li>
+                    <li>Quick Learner - Adapt to new technologies easily</li>
+                </ol>
+            </div>
+ 
+            <h2>Achievements & Recognition</h2>
+            <div class="card">
+                <ul>
+                    <li>Best Group Project Award - Database Management Course (2024)</li>
+                    <li>Certificate of Participation - Web Development Workshop (2024)</li>
+                    <li>Dean's List - Semester 2 (2024)</li>
+                    <li>Volunteer Appreciation Award (2023)</li>
+                </ul>
+            </div>
+ 
+            <h2>Career Goals</h2>
+            <div class="card">
+                <div class="exp-box">
+                    <p><b>Short-term Goals:</b></p>
+                    <ul>
+                        <li>Complete diploma with good CGPA</li>
+                        <li>Gain practical experience through internship</li>
+                        <li>Learn advanced web development frameworks</li>
+                        <li>Obtain IT certifications</li>
+                    </ul>
+                    
+                    <p><b>Long-term Goals:</b></p>
+                    <ul>
+                        <li>Pursue degree in Political Science or IT</li>
+                        <li>Become a professional web developer</li>
+                        <li>Start freelance web design business</li>
+                    </ul>
+                </div>
+            </div>
+ 
+             <p style="margin-top: 40px; font-style: italic; text-align: center;">
+                 <small>* All experience information is accurate as of December 2025</small>
+             </p>
+         </div>
+ 
+         <footer>
+             © 2025 Mohamad Hazim Iqbal • UiTM • IMD318 Project
+         </footer>
+     </div>
+ 
+    <!-- shared site script for parity with index.html -->
+    <script src="js/script.js"></script>
+    <script>
+        if (typeof updateClock !== 'function') {
+            function updateClock(){ const n=new Date(); const p=s=>String(s).padStart(2,'0'); document.getElementById('clock').textContent = '📅 '+p(n.getDate())+'/'+p(n.getMonth()+1)+'/'+n.getFullYear()+' | ⏰ '+p(n.getHours())+':'+p(n.getMinutes())+':'+p(n.getSeconds()); }
+            updateClock(); setInterval(updateClock,1000);
+        }
+    </script>
+</body>
+</html>

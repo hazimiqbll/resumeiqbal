@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | My Personal Website</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- local: gallery-specific and card/profile tweaks -->
+    <style>
+        .card {
+            background: rgba(255,255,255,0.03);
+            padding: 18px;
+            border-radius: 12px;
+            margin-bottom: 22px;
+            box-shadow: 0 8px 22px rgba(0,0,0,0.28);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0,0,0,0.35); }
+
+        .profile-section { text-align:center; margin-bottom:18px; }
+        .profile-img { width:140px; height:140px; border-radius:50%; overflow:hidden; display:inline-block; border:4px solid rgba(255,255,255,0.04); box-shadow:0 8px 20px rgba(0,0,0,0.3); object-fit:cover; }
+        .profile-placeholder { width:140px; height:140px; border-radius:50%; overflow:hidden; display:inline-block; border:4px solid rgba(255,255,255,0.04); box-shadow:0 8px 20px rgba(0,0,0,0.3); }
+        .profile-placeholder img { width:100%; height:100%; object-fit:cover; display:block; }
+
+        .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-top: 8px; }
+        .gallery-item { position: relative; overflow: hidden; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.35); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; background: rgba(0,0,0,0.18); }
+        .gallery-item:hover { transform: scale(1.03); box-shadow: 0 12px 30px rgba(0,0,0,0.45); }
+        .gallery-item img { width:100%; height:320px; object-fit:cover; display:block; transition: transform 0.3s ease; }
+        .gallery-item:hover img { transform: scale(1.08); }
+
+        .modal { display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.95); }
+        .modal-content { margin:auto; display:block; max-width:90%; max-height:90%; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); border-radius:10px; }
+        .close { position:absolute; top:30px; right:50px; color:#fff; font-size:50px; font-weight:bold; cursor:pointer; transition:0.3s; }
+        .close:hover { color:#ff6b81; }
+
+        @media (max-width:768px) {
+            .gallery-grid { grid-template-columns: 1fr; }
+            .gallery-item img { height:250px; }
+            .close { right:20px; top:20px; font-size:40px; }
+            .profile-placeholder { width:120px; height:120px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="biodata.html">BIODATA</a></li>
+            <li><a href="education.html">EDUCATION</a></li>
+            <li><a href="experience.html">EXPERIENCE</a></li>
+            <li><a href="family.html">FAMILY</a></li>
+            <li><a href="gallery.html">GALLERY</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Gallery</h1>
+            <p>Memories</p>
+        </header>
+
+
+        <div class="content-wrapper">
+            <div id="clock" style="text-align:center;margin-bottom:12px;"></div>
+
+            <div class="card">
+                <div class="gallery-grid">
+                    <div class="gallery-item" onclick="openModal('photo1.jpg')">
+                        <img src="photo1.jpg" alt="Photo 1">
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal('photo2.jpg')">
+                        <img src="photo2.jpg" alt="Photo 2">
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal('photo3.jpg')">
+                        <img src="photo3.jpg" alt="Photo 3">
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal('photo4.jpg')">
+                        <img src="photo4.jpg" alt="Photo 4">
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal('photo5.jpg')">
+                        <img src="photo5.jpg" alt="Photo 5">
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal('photo6.jpg')">
+                        <img src="photo6.jpg" alt="Photo 6">
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal('photo7.jpg')">
+                        <img src="photo7.jpg" alt="Photo 7">
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal('photo8.jpg')">
+                        <img src="photo8.jpg" alt="Photo 8">
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal('photo9.jpg')">
+                        <img src="photo9.jpg" alt="Photo 9">
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal('photo10.jpg')">
+                        <img src="photo10.jpg" alt="Photo 10">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            © 2025 Mohamad Hazim Iqbal • UiTM • IMD318 Project
+        </footer>
+    </div>
+
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+
+    <script>
+        function openModal(imgSrc) {
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("modalImg");
+            modal.style.display = "block";
+            modalImg.src = imgSrc;
+        }
+        function closeModal() { document.getElementById("myModal").style.display = "none"; }
+        window.onclick = function(event) { if (event.target == document.getElementById("myModal")) closeModal(); }
+
+        if (typeof updateClock !== 'function') {
+            function updateClock(){ const n=new Date(); const p=s=>String(s).padStart(2,'0'); document.getElementById('clock').textContent = '📅 '+p(n.getDate())+'/'+p(n.getMonth()+1)+'/'+n.getFullYear()+' | ⏰ '+p(n.getHours())+':'+p(n.getMinutes())+':'+p(n.getSeconds()); }
+            updateClock(); setInterval(updateClock,1000);
+        }
+    </script>
+
+    <!-- shared site script for parity with index.html -->
+    <script src="js/script.js"></script>
+</body>
+</html>

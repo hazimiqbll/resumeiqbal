@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education | My Personal Website</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- small page-specific styles for cards, profile and tables -->
+    <style>
+        /* local: card layout, profile circle, table tweaks, social thumbs */
+        .card {
+            background: rgba(255,255,255,0.03);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 22px;
+            box-shadow: 0 8px 22px rgba(0,0,0,0.28);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0,0,0,0.35); }
+
+        .table-card table { width:100%; background: transparent; border-radius:8px; overflow:hidden; }
+        .table-card th, .table-card td { padding: 12px 16px; text-align:left; vertical-align: middle; }
+
+        .profile-section { text-align:center; margin-bottom:18px; }
+        .profile-placeholder {
+            width:160px; height:160px; border-radius:50%;
+            overflow:hidden; display:inline-block; border:4px solid rgba(255,255,255,0.04);
+            box-shadow:0 8px 20px rgba(0,0,0,0.3);
+        }
+        .profile-placeholder img { width:100%; height:100%; object-fit:cover; display:block; }
+
+        .soc-icon, .soc-thumb { width:50px; height:50px; border-radius:10px; padding:6px; box-shadow:0 4px 10px rgba(0,0,0,0.3); transition:transform .25s, opacity .25s; }
+        .social-media a:hover .soc-icon, .social-media a:hover .soc-thumb { transform: translateY(-6px); opacity:0.92; }
+
+        /* spacing for headings/lists inside cards */
+        .card ul, .card ol { margin: 10px 0 0 24px; }
+        @media (max-width:600px){ .profile-placeholder{width:130px;height:130px;} .card{padding:16px;} }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="biodata.html">BIODATA</a></li>
+            <li><a href="education.html">EDUCATION</a></li>
+            <li><a href="experience.html">EXPERIENCE</a></li>
+            <li><a href="family.html">FAMILY</a></li>
+            <li><a href="gallery.html">GALLERY</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <header>
+            <h1>My Education</h1>
+            <p>Academic Background & Achievements</p>
+        </header>
+        
+        <div class="content-wrapper">
+            <div id="clock"></div>
+            
+            <!-- profile placeholder (loads same local image used elsewhere) -->
+            <div class="profile-section">
+                <img src="myself.jpg" alt="My Profile Picture" class="profile-img">
+            </div>
+            
+            <h2>Current Education</h2>
+            <div class="card">
+                <div class="edu-box">
+                    <h3>Diploma in Information Management</h3>
+                    <p>📅 2023 - present (Expected: 2026)</p>
+                    <p><strong>Institution:</strong> Universiti Teknologi MARA (UiTM)</p>
+                    <p><strong>Campus:</strong> UiTM Segamat, Johor</p>
+                    <p><strong>Faculty:</strong> Faculty of Information Science</p>
+                    <p><strong>Status:</strong> last Year Student</p>
+                    
+                    <div class="edu-logo">
+                        <img src="uitmlogo.jpg" alt="UiTM Logo">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="edu-box">
+                    <h3>School</h3>
+                    <p>📅 2012 - 2017</p>
+                    <p><strong>Institution:</strong> Sekolah Kebangsaan Air Putih</p>
+                    
+                    <div class="edu-logo">
+                        <img src="skap.jpg" alt="SK Air Putih Logo">
+                        
+                    </div>
+                    
+                    <p>📅 2017 - 2022</p>
+                    <p><strong>Institution:</strong> Sekolah Menengah Kebangsian Dato'Sulaiman</p>
+                    
+                    <div class="edu-logo">
+                        <img src="smkds.jpg" alt="smkds.jpg">
+                    </div>
+                </div>
+            </div>
+            
+            <h2>Previous Education</h2>
+            <div class="card">
+                <div class="edu-box">
+                    <h3>Sijil Pelajaran Malaysia (SPM)</h3>
+                    <p>📅 2022</p>
+                    <p><strong>School:</strong> SMK Dato'Sulaiman, Batu Pahat, Johor</p>
+                    <p><strong>Results:</strong> 5A 1B 2C 1D 1E</p>
+                </div>
+            </div>
+            
+            <h2>Co-Curricular Activities</h2>
+            <h3>University Level (UiTM):</h3>
+            <div class="card table-card">
+                <table>
+                    <tr>
+                        <th>Activity/Club</th>
+                        <th>Position</th>
+                        <th>Year</th>
+                    </tr>
+                    <tr>
+                        <td>Information Management Club (IMS)</td>
+                        <td>Publicity and Multimedia</td>
+                        <td>2023 - 2025</td>
+                    </tr>
+                    <tr>
+                        <td>Chess Club</td>
+                        <td>Treasurer</td>
+                        <td>2023 - 2025</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <h3>School Level (Secondary):</h3>
+            <div class="card">
+                <ol>
+                    <li>Pantun Club - Member (2020-2022)</li>
+                    <li>Badminton Team - Player (2018-2020)</li>
+                    <li>(PBSM) Malaysian Red Crescent - Active Participant (2018-2020)</li>
+                    <li>Fireman Club - Member (2020-2022)</li>
+                </ol>
+            </div>
+            
+            <h2>Certifications & Courses</h2>
+            <div class="card">
+                <ol>
+                    <li><b>Introduction to HTML & CSS</b> - Online Course (2024)</li>
+                    <li><b>JavaScript Basics</b> - Codecademy (2024)</li>
+                    <li><b>Microsoft Office Specialist</b> - Microsoft (2023)</li>
+                    <li><b>Database Fundamentals</b> - Online Learning Platform (2024)</li>
+                </ol>
+            </div>
+            
+            <h2>Skills Developed Through Education</h2>
+            <div class="card">
+                <div class="edu-box">
+                    <h3>Technical Skills:</h3>
+                    <ul>
+                        <li>Web Development - HTML, CSS, JavaScript (Basic)</li>
+                        <li>Programming - C++, PHP (Basic)</li>
+                        <li>MS Office - Word, Excel, PowerPoint (Advanced)</li>
+                    </ul>
+                    <h3>Soft Skills:</h3>
+                    <ul>
+                        <li>Critical thinking</li>
+                        <li>Communication and presentation skills</li>
+                        <li>Teamwork and collaboration</li>
+                        <li>Research and analytical skills</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h2>Future Education Plans</h2>
+            <div class="card">
+                <div class="edu-box">
+                    <p><b>Short-term Goal:</b></p>
+                    <ul>
+                        <li>Complete Diploma with great of CGPA 3.5 and above</li>
+                        <li>Join agent of insurance</li>
+                        <li>Obtain more IT skills</li>
+                    </ul>
+                    <p><b>Long-term Goal:</b></p>
+                    <ul>
+                        <li>Pursue Bachelor's Degree in Political science or IT</li>
+                        <li>Improving self in learning programming languages</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <p style="margin-top: 40px; font-style: italic; text-align: center;">
+                <small>* All education records are accurate and verified as of December 2025</small>
+            </p>
+        </div>
+        
+        <footer>
+            © 2025 Mohamad Hazim Iqbal • UiTM • IMD318 Project
+        </footer>
+    </div>
+    
+    <!-- shared site script for parity with index.html -->
+    <script src="js/script.js"></script>
+    <script>
+        if (typeof updateClock !== 'function') {
+            function updateClock(){ const n=new Date(); const p=s=>String(s).padStart(2,'0'); document.getElementById('clock').textContent = '📅 '+p(n.getDate())+'/'+p(n.getMonth()+1)+'/'+n.getFullYear()+' | ⏰ '+p(n.getHours())+':'+p(n.getMinutes())+':'+p(n.getSeconds()); }
+            updateClock(); setInterval(updateClock,1000);
+        }
+    </script>
+</body>
+</html>
